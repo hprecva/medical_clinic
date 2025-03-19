@@ -1,2 +1,46 @@
 node_modules/
 .env
+
+# Node.js dependencies
+node_modules/
+package-lock.json
+yarn.lock
+
+# Angular build outputs
+dist/
+out-tsc/
+
+# IDE/Editor configurations
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment files (configuración sensible)
+src/environments/environment*.ts
+
+# Logs y depuración
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+karma-coverage/
+
+# Cache y archivos temporales
+/.angular/cache/
+/.angular/
+.temp/
+
+# Compilaciones de TypeScript
+*.js
+*.js.map
+*.d.ts
+
+# Reportes de pruebas
+coverage/
+test-results/
+
+# Configuración de Firebase (si usas Firebase Hosting)
+.firebase/
