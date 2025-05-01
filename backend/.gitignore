@@ -1,0 +1,20 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Entornos
+.env
+
+# Compilados
+dist/
+build/
+
+# IDEs
+.vscode/
+.idea/
+
+# Cobertura
+coverage/

@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5000:5000"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/mydatabase
+      - JWT_SECRET=supersecreto
+    depends_on:
+      - mongo
+    
+  backend-test:
+    build: 
+      context: ./backend
+    container_name: backend-test
+    command: ["npm","test"]
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/miapp_test
+      - JWT_SECRET=supersecreto
+
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "4200:4200"
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:

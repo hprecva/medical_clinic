@@ -44,3 +44,13 @@ test-results/
 
 # Configuración de Firebase (si usas Firebase Hosting)
 .firebase/
+
+# Docker
+*.env
+*.local
+docker-compose-override.yml
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+ehthumbs.db
